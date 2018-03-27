@@ -1,7 +1,16 @@
 Before do 
-  @browser = Watir::Browser.new :chrome, headless:true
+
+    caps = {
+        :platform => "Windows 10",
+        :browserName => "Chrome",
+        :version => "latest"
+    }
+
+    @driver = Selenium::WebDriver.for(:remote,
+           :url => "https://#{ENV['SAUCEUSER']}:#{ENV['SAUCEKEY']}@ondemand.saucelabs.com:443/wd/hub",
+           :desired_capabilities => caps)
 end
 
 After do
-  @browser.close
+    @driver.close
 end

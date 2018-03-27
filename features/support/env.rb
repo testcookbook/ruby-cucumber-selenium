@@ -1,1 +1,1 @@
-require 'watir'
+require "selenium/webdriver"
