@@ -5,10 +5,4 @@ rvm:
   - 2.4
   - 2.5
   - jruby
-addons:
-  chrome: stable
-before_install:
-  - wget https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - export PATH=$PATH:./ 
 script: bundle exec cucumber
